@@ -1,0 +1,352 @@
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@700&family=Mountains+of+Christmas:wght@700&family=Rochester&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  display: grid;
+  /* font-family: 'Lexend Deca', sans-serif; */
+  /* font-family: "Mountains of Christmas", cursive; */
+  font-family: "Rochester", cursive;
+
+  background-image: url(https://cdn.pixabay.com/photo/2012/04/13/01/23/moon-31665_960_720.png);
+  background-size: cover;
+  background-attachment: fixed;
+
+  height: 100vh;
+  background: radial-gradient(ellipse at bottom, #699eec 0%, #181b3f 100%);
+  overflow: hidden;
+
+  /* font-family: 'Rochester', cursive; */
+}
+
+/* .snowflake code from https://www.cssscript.com/tag/snow/: */
+.snowflake {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: linear-gradient(white, white);
+  border-radius: 50%;
+  filter: drop-shadow(0 0 10px white);
+}
+
+main {
+  display: grid;
+  margin: 1vw 15vw;
+  height: 100vh;
+
+  grid-template-areas:
+    "luke16  luke3   header  header  header   luke8    luke14"
+    "luke1   luke23  header  header  header   luke6    luke20"
+    "luke5   luke13  luke22  luke7   luke2    luke19   luke9"
+    "luke10  luke12  emtpy2   luke24  luke24  empty    luke15"
+    "luke18  luke21  luke11  luke24  luke24   luke17   luke4";
+  gap: 1em;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: repeat(5, 17.5vh);
+}
+
+@media (max-width: 1000px) {
+  main {
+    grid-template-areas:
+      "luke3   header  header  empty   luke8"
+      "luke23  header  header  luke9   luke6"
+      "luke13  luke22  luke7   luke2    luke19"
+      "luke12  luke14  luke24  luke15   luke20"
+      "luke21  luke11  luke24  luke4   luke17"
+      "luke16  luke1   luke5   luke10  luke18";
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+  }
+}
+
+/*//////////////////////////////*/
+/*//* Header */
+/*//////////////////////////*/
+
+.headerText {
+  transform: translateX(1vw);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+}
+
+.headerText h1 {
+  font-size: 5em;
+  -webkit-text-stroke-width: 0.01px;
+  animation: 2s glow ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  0% {
+    text-shadow: 0 0 15px white;
+  }
+  100% {
+    text-shadow: 0 0 30px white;
+  }
+}
+
+.span_1 {
+  /* font-size: 3em; */
+  display: block;
+  transform: rotate(-15deg) translateX(-5vw);
+  color: rgb(201, 46, 46);
+  -webkit-text-stroke-color: rgb(243, 49, 49);
+}
+
+.span_2 {
+  display: block;
+  transform: rotate(8deg) translateX(2vw);
+  color: rgb(33, 199, 46);
+  -webkit-text-stroke-color: rgb(54, 248, 70);
+}
+
+.span_3 {
+  display: block;
+  transform: rotate(-8deg) translateY(-1.5vw) translateX(0vw);
+  color: rgb(0, 113, 179);
+  -webkit-text-stroke-color: rgb(0, 150, 236);
+}
+
+/*//////////////////////////////*/
+/*//* Lukene */
+/*//////////////////////////*/
+
+div.luke {
+  height: 100%;
+}
+
+input {
+  display: none;
+}
+
+label {
+  position: relative;
+  display: flex;
+  min-height: 100%;
+  width: 100%;
+  cursor: pointer;
+}
+
+.cover {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: aliceblue;
+  background-color: rgb(0, 113, 179);
+  border: 0.3vw rgb(0, 150, 236);
+  border-radius: 10px;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+  transition: 1.5s ease-in-out;
+  transform-origin: 0% 50%;
+  border-style: dashed;
+}
+
+.jul div.cover {
+  background-color: rgb(33, 199, 46);
+  border-color: rgb(54, 248, 70);
+}
+
+.luke24 div.cover {
+  background-color: rgb(201, 46, 46);
+  border-color: rgb(243, 49, 49);
+}
+
+.luke input:checked + .cover {
+  transform: rotateY(220deg);
+}
+
+.inside {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 195, 255, 0.911);
+  border-radius: 10px;
+  z-index: 0;
+}
+
+/* .luke input:checked + .inside {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  bottom: 5%;
+  right: 5%;
+  height: 60%;
+  width: 60%;
+} */
+
+/* .icon_type1 {
+  color: rgb(122, 37, 4);
+}
+
+.icon_type2 {
+  color: rgb(4, 41, 122);
+}
+.icon_type3 {
+  color: rgb(255, 255, 255);
+}
+.icon_type4 {
+  color: rgb(192, 22, 17);
+} */
+img {
+  top: 5%;
+  left: 5%;
+  height: 90%;
+  width: 90%;
+  border-radius: 10px;
+  /* background-size: cover; */
+  background-position: center;
+  position: absolute;
+}
+
+#app {
+  border: none;
+}
+
+p {
+  font-size: 3vw;
+  -webkit-text-stroke-color: rgb(250, 249, 175);
+  -webkit-text-stroke-width: 1px;
+}
+
+/* .content:active > {
+  display: block;
+} */
+
+/*//////////////////////////////*/
+/*//* Grid positions */
+/*//////////////////////////*/
+
+/* .empty {
+  grid-area: empty;
+  background-color: aqua;
+}
+
+.empty2 {
+  grid-area: empty2;
+  background-color: aqua;
+} */
+
+div.luke16 {
+  grid-area: luke16;
+  z-index: 1;
+}
+.luke3 {
+  grid-area: luke3;
+  z-index: 2;
+}
+.headerText {
+  grid-area: header;
+}
+.luke8 {
+  grid-area: luke8;
+  z-index: 3;
+}
+div.luke14 {
+  grid-area: luke14;
+  z-index: 4;
+}
+
+.luke1 {
+  grid-area: luke1;
+  z-index: 5;
+}
+div.luke23 {
+  grid-area: luke23;
+  z-index: 6;
+}
+.luke6 {
+  grid-area: luke6;
+  z-index: 7;
+}
+div.luke20 {
+  grid-area: luke20;
+  z-index: 8;
+}
+
+.luke5 {
+  grid-area: luke5;
+  z-index: 9;
+}
+div.luke13 {
+  grid-area: luke13;
+  z-index: 10;
+}
+div.luke22 {
+  grid-area: luke22;
+  z-index: 11;
+}
+.luke7 {
+  grid-area: luke7;
+  z-index: 12;
+}
+.luke2 {
+  grid-area: luke2;
+  z-index: 13;
+}
+div.luke19 {
+  grid-area: luke19;
+  z-index: 14;
+}
+.luke9 {
+  grid-area: luke9;
+  z-index: 15;
+}
+
+div.luke10 {
+  grid-area: luke10;
+  z-index: 16;
+}
+div.luke12 {
+  grid-area: luke12;
+  z-index: 17;
+}
+div.luke21 {
+  grid-area: luke21;
+  z-index: 18;
+}
+div.luke11 {
+  grid-area: luke11;
+  z-index: 19;
+}
+div.luke24 {
+  grid-area: luke24;
+  z-index: 20;
+  font-size: 5vw;
+  border: none;
+}
+div.luke24 p {
+  font-size: 8vw;
+}
+
+div.luke18 {
+  grid-area: luke18;
+  z-index: 21;
+}
+div.luke15 {
+  grid-area: luke15;
+  z-index: 22;
+}
+div.luke17 {
+  grid-area: luke17;
+  z-index: 23;
+}
+.luke4 {
+  grid-area: luke4;
+  z-index: 24;
+}
+
+/* div.jul {
+  grid-area: jul;
+  z-index: 9;
+} */
