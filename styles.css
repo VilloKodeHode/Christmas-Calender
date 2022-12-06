@@ -172,6 +172,15 @@ label {
   z-index: 0;
 }
 
+#button {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 195, 255, 0.911);
+  border: none;
+  border-radius: 10px;
+  display: none;
+}
+
 /* .luke input:checked + .inside {
   background-position: center;
   background-size: cover;
@@ -207,6 +216,15 @@ img {
   /* background-size: cover; */
   background-position: center;
   position: absolute;
+}
+
+@keyframes slideInFromTop {
+  0% {
+    transfrom: translateY(0px);
+  }
+  100% {
+    transform: translateY(100%);
+  }
 }
 
 #app {
