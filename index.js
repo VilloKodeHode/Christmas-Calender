@@ -1,11 +1,11 @@
-//! Challange! use Js to make a button for each luke to make an image appear (appendchild/remove child?)
+//? Hvordan få tak i alle lukene uten å lage checkbox1-24? Hvis det kan gjøres enkelt, hvordan kan jeg da gi hver enkelt en individuell effekt?
 
 const checkBox1 = document.getElementById("inputBox1");
 const checkBox2 = document.getElementById("inputBox2");
 const image = document.getElementsByTagName("img");
 const body = document.getElementById("body");
 
-const jingleSound = new Audio("/sound/jingle-bells.wav");
+const jingleSound = new Audio("./sound/jingle-bells.wav");
 
 imageArray = [];
 
@@ -54,7 +54,8 @@ checkBox2.addEventListener("click", () => {
     setTimeout(() => {
       image[1].style.transform =
         "translateX(0) translateY(0px) rotate(-10800deg)";
-      //! rotasjonen fungerer ikke som jeg vil når jingleSound.pause eller .currentTime er med
+      //? rotasjonen fungerer ikke som jeg vil når jingleSound.pause eller .currentTime er med...Hvorfor?
+      //! Fungerer plutselig allikevel. NVM! Men sjekk om det allikevel kan skje av og til...
     }, 10000);
     setTimeout(() => {
       jingleSound.pause();

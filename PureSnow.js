@@ -1,5 +1,3 @@
-
-
 let snowflakes_count = 200;
 
 // let base_css = ``; // Put your custom base css here
@@ -89,5 +87,4 @@ window.onload = function () {
 
 // TODO add progress bar for slower clients
 
-
-// code from https://www.cssscript.com/tag/snow/
+// PureSnow code from https://www.cssscript.com/tag/snow/. Not my work.
