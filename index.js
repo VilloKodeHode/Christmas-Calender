@@ -1,10 +1,11 @@
 //! Challange! use Js to make a button for each luke to make an image appear (appendchild/remove child?)
 
-//* fungerer men er helt ubrukelig:
 const checkBox1 = document.getElementById("inputBox1");
 const checkBox2 = document.getElementById("inputBox2");
 const image = document.getElementsByTagName("img");
 const body = document.getElementById("body");
+
+const jingleSound = new Audio("/sound/jingle-bells.wav");
 
 imageArray = [];
 
@@ -30,6 +31,7 @@ checkBox2.addEventListener("click", () => {
   if (checkBox2.checked) {
     image[1].style.transition = "2s ease";
     setTimeout(() => {
+      jingleSound.play();
       image[1].style.transform =
         "translateY(-500px) translateX(1000px) rotate(40deg)";
     }, 500);
@@ -51,8 +53,13 @@ checkBox2.addEventListener("click", () => {
     }, 8000);
     setTimeout(() => {
       image[1].style.transform =
-        "translateX(0) translateY(0px) rotate(10800deg)";
+        "translateX(0) translateY(0px) rotate(-10800deg)";
+      //! rotasjonen fungerer ikke som jeg vil når jingleSound.pause eller .currentTime er med
     }, 10000);
+    setTimeout(() => {
+      jingleSound.pause();
+      jingleSound.currentTime = 0;
+    }, 12000);
   }
   console.log(image[1].style.display);
   console.log(checkBox2.checked);
